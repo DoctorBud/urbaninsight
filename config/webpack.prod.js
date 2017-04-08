@@ -49,7 +49,7 @@ module.exports = function (env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-path
        */
-      path: helpers.root('dist'),
+      path: helpers.root('docs'),
 
       /**
        * Specifies the name of each output file on disk.
@@ -222,7 +222,7 @@ module.exports = function (env) {
         options: {
           context: helpers.root('src'),
           output: {
-            path: helpers.root('dist')
+            path: helpers.root('docs')
           },
 
           /**

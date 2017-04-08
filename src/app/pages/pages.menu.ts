@@ -15,49 +15,71 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'editors',
+        path: 'maps',
         data: {
           menu: {
-            title: 'Editors',
-            icon: 'ion-edit',
+            title: 'Maps',
+            icon: 'ion-ios-location-outline',
             selected: false,
             expanded: false,
-            order: 100,
+            order: 600,
           }
         },
         children: [
           {
-            path: 'ckeditor',
+            path: 'leafletmaps',
             data: {
               menu: {
-                title: 'CKEditor',
+                title: 'Leaflet Maps',
               }
             }
           }
         ]
       },
-      {
-        path: 'components',
-        data: {
-          menu: {
-            title: 'Components',
-            icon: 'ion-gear-a',
-            selected: false,
-            expanded: false,
-            order: 250,
-          }
-        },
-        children: [
-          {
-            path: 'treeview',
-            data: {
-              menu: {
-                title: 'Tree View',
-              }
-            }
-          }
-        ]
-      },
+      // {
+      //   path: 'editors',
+      //   data: {
+      //     menu: {
+      //       title: 'Editors',
+      //       icon: 'ion-edit',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 100,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'ckeditor',
+      //       data: {
+      //         menu: {
+      //           title: 'CKEditor',
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   path: 'components',
+      //   data: {
+      //     menu: {
+      //       title: 'Components',
+      //       icon: 'ion-gear-a',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 250,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'treeview',
+      //       data: {
+      //         menu: {
+      //           title: 'Tree View',
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
         path: 'charts',
         data: {
@@ -80,90 +102,90 @@ export const PAGES_MENU = [
           }
         ]
       },
-      {
-        path: 'ui',
-        data: {
-          menu: {
-            title: 'UI Features',
-            icon: 'ion-android-laptop',
-            selected: false,
-            expanded: false,
-            order: 300,
-          }
-        },
-        children: [
-          {
-            path: 'typography',
-            data: {
-              menu: {
-                title: 'Typography',
-              }
-            }
-          },
-          {
-            path: 'buttons',
-            data: {
-              menu: {
-                title: 'Buttons',
-              }
-            }
-          },
-          {
-            path: 'icons',
-            data: {
-              menu: {
-                title: 'Icons',
-              }
-            }
-          },
-          {
-            path: 'modals',
-            data: {
-              menu: {
-                title: 'Modals',
-              }
-            }
-          },
-          {
-            path: 'grid',
-            data: {
-              menu: {
-                title: 'Grid',
-              }
-            }
-          },
-        ]
-      },
-      {
-        path: 'forms',
-        data: {
-          menu: {
-            title: 'Form Elements',
-            icon: 'ion-compose',
-            selected: false,
-            expanded: false,
-            order: 400,
-          }
-        },
-        children: [
-          {
-            path: 'inputs',
-            data: {
-              menu: {
-                title: 'Form Inputs',
-              }
-            }
-          },
-          {
-            path: 'layouts',
-            data: {
-              menu: {
-                title: 'Form Layouts',
-              }
-            }
-          }
-        ]
-      },
+      // {
+      //   path: 'ui',
+      //   data: {
+      //     menu: {
+      //       title: 'UI Features',
+      //       icon: 'ion-android-laptop',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 300,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'typography',
+      //       data: {
+      //         menu: {
+      //           title: 'Typography',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'buttons',
+      //       data: {
+      //         menu: {
+      //           title: 'Buttons',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'icons',
+      //       data: {
+      //         menu: {
+      //           title: 'Icons',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'modals',
+      //       data: {
+      //         menu: {
+      //           title: 'Modals',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'grid',
+      //       data: {
+      //         menu: {
+      //           title: 'Grid',
+      //         }
+      //       }
+      //     },
+      //   ]
+      // },
+      // {
+      //   path: 'forms',
+      //   data: {
+      //     menu: {
+      //       title: 'Form Elements',
+      //       icon: 'ion-compose',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 400,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'inputs',
+      //       data: {
+      //         menu: {
+      //           title: 'Form Inputs',
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: 'layouts',
+      //       data: {
+      //         menu: {
+      //           title: 'Form Layouts',
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
         path: 'tables',
         data: {
@@ -206,14 +228,14 @@ export const PAGES_MENU = [
           }
         },
         children: [
-          {
-            path: 'googlemaps',
-            data: {
-              menu: {
-                title: 'Google Maps',
-              }
-            }
-          },
+          // {
+          //   path: 'googlemaps',
+          //   data: {
+          //     menu: {
+          //       title: 'Google Maps',
+          //     }
+          //   }
+          // },
           {
             path: 'leafletmaps',
             data: {
@@ -222,22 +244,22 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'bubblemaps',
-            data: {
-              menu: {
-                title: 'Bubble Maps',
-              }
-            }
-          },
-          {
-            path: 'linemaps',
-            data: {
-              menu: {
-                title: 'Line Maps',
-              }
-            }
-          }
+          // {
+          //   path: 'bubblemaps',
+          //   data: {
+          //     menu: {
+          //       title: 'Bubble Maps',
+          //     }
+          //   }
+          // },
+          // {
+          //   path: 'linemaps',
+          //   data: {
+          //     menu: {
+          //       title: 'Line Maps',
+          //     }
+          //   }
+          // }
         ]
       },
       {
