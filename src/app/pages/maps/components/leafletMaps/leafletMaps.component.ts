@@ -61,6 +61,15 @@ export class LeafletMaps {
         };
       },
       onEachFeature: function (feature, layer) {
+        // console.log('start', feature, layer, layer.feature.properties.NAME);
+        var label = L.marker(layer.getBounds().getCenter(), {
+          icon: L.divIcon({
+            className: 'label',
+            html: feature.properties.NAME,
+            iconSize: [100, 40]
+          })
+        }).addTo(map);
+        label.valueOf()._icon.style.color = 'red';
         neighborhoodsSearch.push({
           name: layer.feature.properties.NAME,
           source: "neighborhoods",
