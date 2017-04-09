@@ -23,8 +23,8 @@ export class PieChartService {
       }, {
         color: pieColor,
         description: 'Population',
-        stats: '178,391',
-        icon: 'face',
+        stats: '11,642',
+        icon: 'person',
       }, {
         color: pieColor,
         description: 'Crime',

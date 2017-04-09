@@ -48,10 +48,55 @@ export class LeafletMaps {
     });
     cities.addTo(map);
 
+    var neighborhoods;
+
+    var info = L.control();
+
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+    };
+
+    // method that we will use to update the control based on feature properties passed
+    info.update = function (props) {
+      this._div.innerHTML = '<h4>Population Density</h4>' +  (props ?
+        '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+        : 'Hover over a neighborhood');
+    };
+
+    info.addTo(map);
+    //info.valueOf()._icon.style.color = 'black';
+
+    function highlightFeature(e) {
+      var layer = e.target;
+      console.log('highlighting feature')
+      layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+       });
+
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+
+      info.update(layer.feature.properties);
+      }
+    }
+
+    function resetHighlight(e) {
+      neighborhoods.resetStyle(e.target);
+    } 
+
+    function zoomToFeature(e) {
+      console.log('clicking')
+      map.fitBounds(e.target.getBounds());
+    }
 
     const neighborhoodsURL = 'assets/geo/COE_Neighborhoods_7April2017.geojson';
     var neighborhoodsSearch = [];
-    var neighborhoods = L.geoJson(null, {
+    neighborhoods = L.geoJson(null, {
       style: function (feature) {
         return {
           color: "green",
@@ -66,10 +111,20 @@ export class LeafletMaps {
           icon: L.divIcon({
             className: 'label',
             html: feature.properties.NAME,
-            iconSize: [100, 40]
+            iconSize: [80, 20]
           })
         }).addTo(map);
-        label.valueOf()._icon.style.color = 'red';
+        label.valueOf()._icon.style.color = 'black';
+
+        //layer.on({
+          //mouseover: highlightFeature,
+          //mouseout: resetHighlight,
+          //click: zoomToFeature
+        //});
+
+        layer.on('mouseover', function (e) {console.log('mouse over', e.target)});
+
+
         neighborhoodsSearch.push({
           name: layer.feature.properties.NAME,
           source: "neighborhoods",
@@ -78,10 +133,13 @@ export class LeafletMaps {
         });
       }
     });
+    
+
     $.getJSON(neighborhoodsURL, function (data) {
       neighborhoods.addData(data);
     });
     neighborhoods.addTo(map);
+
 
     L.marker([44.0489713,-123.0944854]).addTo(map)
       .bindPopup('Downtown Athletic Club.<br> Hack for a Cause.')
