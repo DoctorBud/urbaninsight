@@ -60,9 +60,15 @@ export class LeafletMaps {
 
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
-      this._div.innerHTML = '<h4>Population Density</h4>' +  (props ?
-        '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-        : 'Hover over a neighborhood');
+      console.log('info.update', props);
+      // this._div.innerHTML = '<h4>Population Density</h4>' +  (props ?
+      //   '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+      //   : 'Hover over a neighborhood');
+      this._div.innerHTML = props ? ('<h4>NAME</h4>' + props.NAME + '<h4>POP_2000</h4>' + props.POP_2000) :
+                                '???';
+      this._div.style.color = 'black';
+      this._div.style.backgroundColor = 'lightyellow';
+      this._div.style.border = '1px solid lightgreen';
     };
 
     info.addTo(map);
@@ -70,9 +76,8 @@ export class LeafletMaps {
 
     function highlightFeature(e) {
       var layer = e.target;
-      console.log('highlighting feature')
       layer.setStyle({
-        weight: 5,
+        weight: 15,
         color: '#666',
         dashArray: '',
         fillOpacity: 0.7
@@ -80,14 +85,13 @@ export class LeafletMaps {
 
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
-
-      info.update(layer.feature.properties);
       }
+      info.update(layer.feature.properties);
     }
 
     function resetHighlight(e) {
       neighborhoods.resetStyle(e.target);
-    } 
+    }
 
     function zoomToFeature(e) {
       console.log('clicking')
@@ -100,9 +104,9 @@ export class LeafletMaps {
       style: function (feature) {
         return {
           color: "green",
+          weight: 2,
           fill: false,
-          opacity: 1,
-          clickable: false
+          opacity: 1
         };
       },
       onEachFeature: function (feature, layer) {
@@ -122,7 +126,19 @@ export class LeafletMaps {
           //click: zoomToFeature
         //});
 
-        layer.on('mouseover', function (e) {console.log('mouse over', e.target)});
+        // console.log('layer', layer, feature.properties.NAME);
+        layer.bindPopup(
+          feature.properties.NAME + '\nPopulation(2000):' + feature.properties.POP_2000,
+          {
+            closeButton: false,
+            offset: L.point(0, -20)
+          });
+        label.on('mouseover', function(e) { console.log('label mouseover', feature.properties.NAME); layer.openPopup(); });
+        label.on('mouseout', function(e) { console.log('label mouseout', feature.properties.NAME); layer.closePopup(); });
+        label.on('click', function(e) { console.log('label click', feature.properties.NAME); layer.openPopup(); });
+        layer.on('mouseover', function(e) { console.log('layer mouseover', feature.properties.NAME); highlightFeature(e);});
+        layer.on('mouseout', function(e) { console.log('layer mouseout', feature.properties.NAME); resetHighlight(e);});
+        layer.on('click', function (e) {console.log('click', feature.properties.NAME, e.target)});
 
 
         neighborhoodsSearch.push({
@@ -133,7 +149,7 @@ export class LeafletMaps {
         });
       }
     });
-    
+
 
     $.getJSON(neighborhoodsURL, function (data) {
       neighborhoods.addData(data);
