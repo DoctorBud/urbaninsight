@@ -216,132 +216,132 @@ export const PAGES_MENU = [
           }
         ]
       },
-      {
-        path: 'maps',
-        data: {
-          menu: {
-            title: 'Maps',
-            icon: 'ion-ios-location-outline',
-            selected: false,
-            expanded: false,
-            order: 600,
-          }
-        },
-        children: [
-          // {
-          //   path: 'googlemaps',
-          //   data: {
-          //     menu: {
-          //       title: 'Google Maps',
-          //     }
-          //   }
-          // },
-          {
-            path: 'leafletmaps',
-            data: {
-              menu: {
-                title: 'Leaflet Maps',
-              }
-            }
-          },
-          // {
-          //   path: 'bubblemaps',
-          //   data: {
-          //     menu: {
-          //       title: 'Bubble Maps',
-          //     }
-          //   }
-          // },
-          // {
-          //   path: 'linemaps',
-          //   data: {
-          //     menu: {
-          //       title: 'Line Maps',
-          //     }
-          //   }
-          // }
-        ]
-      },
+      // {
+      //   path: 'maps',
+      //   data: {
+      //     menu: {
+      //       title: 'Maps',
+      //       icon: 'ion-ios-location-outline',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 600,
+      //     }
+      //   },
+      //   children: [
+      //     // {
+      //     //   path: 'googlemaps',
+      //     //   data: {
+      //     //     menu: {
+      //     //       title: 'Google Maps',
+      //     //     }
+      //     //   }
+      //     // },
+      //     {
+      //       path: 'leafletmaps',
+      //       data: {
+      //         menu: {
+      //           title: 'Leaflet Maps',
+      //         }
+      //       }
+      //     },
+      //     // {
+      //     //   path: 'bubblemaps',
+      //     //   data: {
+      //     //     menu: {
+      //     //       title: 'Bubble Maps',
+      //     //     }
+      //     //   }
+      //     // },
+      //     // {
+      //     //   path: 'linemaps',
+      //     //   data: {
+      //     //     menu: {
+      //     //       title: 'Line Maps',
+      //     //     }
+      //     //   }
+      //     // }
+      //   ]
+      // },
+      // {
+      //   path: '',
+      //   data: {
+      //     menu: {
+      //       title: 'Pages',
+      //       icon: 'ion-document',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 650,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: ['/login'],
+      //       data: {
+      //         menu: {
+      //           title: 'Login'
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: ['/register'],
+      //       data: {
+      //         menu: {
+      //           title: 'Register'
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   path: '',
+      //   data: {
+      //     menu: {
+      //       title: 'Menu Level 1',
+      //       icon: 'ion-ios-more',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 700,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: '',
+      //       data: {
+      //         menu: {
+      //           title: 'Menu Level 1.1',
+      //           url: '#'
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: '',
+      //       data: {
+      //         menu: {
+      //           title: 'Menu Level 1.2',
+      //           url: '#'
+      //         }
+      //       },
+      //       children: [
+      //         {
+      //           path: '',
+      //           data: {
+      //             menu: {
+      //               title: 'Menu Level 1.2.1',
+      //               url: '#'
+      //             }
+      //           }
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         path: '',
         data: {
           menu: {
-            title: 'Pages',
-            icon: 'ion-document',
-            selected: false,
-            expanded: false,
-            order: 650,
-          }
-        },
-        children: [
-          {
-            path: ['/login'],
-            data: {
-              menu: {
-                title: 'Login'
-              }
-            }
-          },
-          {
-            path: ['/register'],
-            data: {
-              menu: {
-                title: 'Register'
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Menu Level 1',
-            icon: 'ion-ios-more',
-            selected: false,
-            expanded: false,
-            order: 700,
-          }
-        },
-        children: [
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.1',
-                url: '#'
-              }
-            }
-          },
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.2',
-                url: '#'
-              }
-            },
-            children: [
-              {
-                path: '',
-                data: {
-                  menu: {
-                    title: 'Menu Level 1.2.1',
-                    url: '#'
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'External Link',
-            url: 'http://akveo.com',
-            icon: 'ion-android-exit',
+            title: 'TAO',
+            url: 'http://www.techoregon.org',
+            icon: 'i-TAO',
             order: 800,
             target: '_blank'
           }

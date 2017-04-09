@@ -64,11 +64,12 @@ export class LeafletMaps {
       // this._div.innerHTML = '<h4>Population Density</h4>' +  (props ?
       //   '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
       //   : 'Hover over a neighborhood');
-      this._div.innerHTML = props ? ('<h4>NAME</h4>' + props.NAME + '<h4>POP_2000</h4>' + props.POP_2000) :
+      this._div.innerHTML = props ? ('<h5>Neighborhood</h5>' + props.NAME + '<h6>Population (2000)</h6>' + props.POP_2000) :
                                 '???';
       this._div.style.color = 'black';
-      this._div.style.backgroundColor = 'lightyellow';
-      this._div.style.border = '1px solid lightgreen';
+      this._div.style.padding = '5px';
+      this._div.style.backgroundColor = 'aliceblue';
+      this._div.style.border = '1px solid lightgray';
     };
 
     info.addTo(map);
@@ -77,8 +78,8 @@ export class LeafletMaps {
     function highlightFeature(e) {
       var layer = e.target;
       layer.setStyle({
-        weight: 15,
-        color: '#666',
+        weight: 5,
+        color: '#55F',
         dashArray: '',
         fillOpacity: 0.7
        });
@@ -104,7 +105,7 @@ export class LeafletMaps {
       style: function (feature) {
         return {
           color: "green",
-          weight: 2,
+          weight: 3,
           fill: false,
           opacity: 1
         };

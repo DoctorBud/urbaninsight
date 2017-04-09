@@ -14,12 +14,12 @@ export class PieChartService {
         color: pieColor,
         description: 'Employment',
         stats: '57,820',
-        icon: 'person',
+        icon: 'money',
       }, {
         color: pieColor,
         description: 'Housing',
         stats: '$ 89,745',
-        icon: 'money',
+        icon: 'person',
       }, {
         color: pieColor,
         description: 'Population',
@@ -28,8 +28,8 @@ export class PieChartService {
       }, {
         color: pieColor,
         description: 'Crime',
-        stats: '32,592',
-        icon: 'refresh',
+        stats: '1',
+        icon: 'money',
       }
     ];
   }

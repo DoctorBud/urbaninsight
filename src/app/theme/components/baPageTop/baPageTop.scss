@@ -35,6 +35,12 @@ a.al-logo {
   span {
     color: $primary;
   }
+
+  img {
+    height: 40px;
+    margin: 0;
+    padding: 0 10px 0 0;
+  }
 }
 
 a.al-logo:hover {
