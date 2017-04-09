@@ -34,12 +34,9 @@ ng2-admin, admin panel framework based on Angular 2, Bootstrap 4 and Webpack. ht
  ```
  git clone https://github.com/DoctorBud/urbaninsight/
  ```
-* install node and npm
-```
-
-```
 * check that node is installed by typing
 ` npm version `
+* if not, install node and npm using the node.js installer https://nodejs.org/en/
 * go to your cloned github repo, do
 ` npm install `
 * you're ready to fire it up:
