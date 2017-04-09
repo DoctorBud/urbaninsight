@@ -1,6 +1,6 @@
 # Hack for a Cause2017 Team UrbanInsight
 
-To address the "Eugene Community Dashboard" challenge, we utilized the latest web technology to build this prototype dashboard. The first feature of this dashboard are 'meters' displaying key statistics such as population, crime rate, employment etc. These meters aim to give a simple and clear message to viewers, but detailed graphs of subsets of data or a time course graph can be displayed when they click on a meter. Our dashboard also features an interactive map of different Eugene neighborhoods, when hovering over each neighborhood key statistics can be displayed on the map.
+To address the "Eugene Community Dashboard" challenge, we utilized the latest web technology to build this prototype dashboard. The first feature of this dashboard are 'meters' displaying key statistics such as population, crime rate, employment etc. These meters aim to give a simple and clear message to viewers, but detailed graphs of subsets of data or a time course graph can be displayed when they click on a meter. Our dashboard also features an interactive map of different Eugene neighborhoods, when hovering over each neighborhood key statistics can be displayed on the map. Potential additional features include a community calendar, more chart and graph types that are interactive and allow people to explore different sets of government data.
 
 Team Members:
 
